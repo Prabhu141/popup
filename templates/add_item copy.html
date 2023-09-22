@@ -1,0 +1,27 @@
+<!-- myapp/templates/myapp/add_item.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Item</title>
+    
+</head>
+<body>
+    <h2>Add Item</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Save</button>
+    </form>
+    
+    <button onclick="cancelConfirmation()">Cancel</button>
+
+
+<button onclick="openPopup()">Add Item</button>
+
+<script>
+    function openPopup() {
+        window.open("{% url 'add_item' %}", "Add Item", "width=400,height=400");
+    }
+</script>
+</body>
+</html>
